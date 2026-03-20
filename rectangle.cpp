@@ -5,23 +5,23 @@
 using namespace std;
 
 double rectanglePerimeter(double length, double width) {
-    if (length <= 0 || width <= 0) {
-        throw invalid_argument("Длина и ширина должны быть положительными числами");
-    }
+    //if (length <= 0 || width <= 0) {
+    //    throw invalid_argument("Длина и ширина должны быть положительными числами");
+    //}
     return 2 * (length + width);
 }
 
 double rectangleArea(double length, double width) {
-    if (length <= 0 || width <= 0) {
-        throw invalid_argument("Длина и ширина должны быть положительными числами");
-    }
+    //if (length <= 0 || width <= 0) {
+    //    throw invalid_argument("Длина и ширина должны быть положительными числами");
+    //}
     return length * width;
 }
 
 double rectangleDiagonal(double length, double width) {
-    if (length <= 0 || width <= 0) {
-        throw invalid_argument("Длина и ширина должны быть положительными числами");
-    }
+    //if (length <= 0 || width <= 0) {
+    //    throw invalid_argument("Длина и ширина должны быть положительными числами");
+    //}
     return sqrt(length * length + width * width);
 }
 
@@ -42,7 +42,11 @@ int main() {
         cout << "Длина = " << a << "\n";
         cout << "Ширина = " << b << "\n";
         cout << "==================================\n";
-        
+
+        if (a <= 0 || b <= 0) {
+            throw invalid_argument("Длина и ширина должны быть положительными числами");
+        }
+    
         // Вычисляем параметры
         double perimeter = rectanglePerimeter(a, b);
         double area = rectangleArea(a, b);
